@@ -7,7 +7,13 @@ type
   IntCallback* = proc (`converter`: ptr Converter; val: cint) {.cdecl.}
   VoidCallback* = proc (`converter`: ptr Converter) {.cdecl.}
 
-{.push dynlib: "wkhtmltox.dll".}
+when defined(windows):
+  {.push dynlib: "wkhtmltox.dll".}
+elif defined(macosx):
+  {.push dynlib: "libwkhtmltox.dynlib".}
+else:
+  {.push dynlib: "libwkhtmltox.so".}
+  
 {.push discardable.}
 proc initImage*(useGraphics: cint): cint {.cdecl, importc: "wkhtmltoimage_init".}
 proc deinitImage*(): cint {.cdecl, importc: "wkhtmltoimage_deinit".}
