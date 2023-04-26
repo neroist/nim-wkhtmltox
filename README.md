@@ -2,6 +2,17 @@
 
 Nim bindings to wkhtmltox.
 
+## Get Started
+
+Firstly, download wkhtmltopdf, as the library depends on the wkhtmltox DLL. You can
+get started with the examples listed here or in the [`examples/`](examples) 
+directory.
+
+## Documentation
+
+Follow libwkhtmltox's directly [here](https://wkhtmltopdf.org/libwkhtmltox/)
+([*Archive*](https://web.archive.org/web/20221218055802/https://wkhtmltopdf.org/libwkhtmltox/))
+
 ## Examples
 
 To PDF:
@@ -85,6 +96,8 @@ settings.setGlobalSettings({
 let conv = createConverter(settings, "")
 
 conv.convert()
+
+deinitImage()
 ```
 
 ```nim
