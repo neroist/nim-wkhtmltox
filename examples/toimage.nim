@@ -12,3 +12,5 @@ settings.setGlobalSettings({
 let conv = createConverter(settings, "")
 
 conv.convert()
+
+deinitImage()
