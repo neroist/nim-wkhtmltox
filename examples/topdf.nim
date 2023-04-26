@@ -31,7 +31,7 @@ let content = """
 """
 
 let settings = createGlobalSettings()
-settings.setGlobalSetting("out", "./latex.pdf")
+settings.setGlobalSetting("out", "./index.pdf")
 
 let conv =  createConverter(settings)
 
@@ -39,10 +39,6 @@ let objSettings = createObjectSettings()
 
 conv.addObject(objSettings, content)
 
-#conv.convert()
-
-
-
-toPdf("https://google.com")
+conv.convert()
 
 deinitPdf()

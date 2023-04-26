@@ -5,7 +5,7 @@ initImage()
 let settings = createGlobalSettings()
 settings.setGlobalSettings({
   "in": "https://spdx.org/licenses/LGPL-3.0-or-later.html",
-  "out": "latex.png",
+  "out": "license.png",
   "fmt": "png"
 })
 
