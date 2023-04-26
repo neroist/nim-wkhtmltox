@@ -1,6 +1,6 @@
 import nimwkhtmltox/pdf
 
-initPdf(true)
+initPdf()
 
 # from w3schools
 let content = """
