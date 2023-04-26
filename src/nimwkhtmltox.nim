@@ -1,0 +1,1 @@
+{.error: "Please import from nimwkhtmltopdf/image or nimwkhtmltopdf/pdf.".}
