@@ -1,3 +1,7 @@
+import std/os
+
+const assets = currentSourcePath().parentDir().parentDir().parentDir() / "assets"
+
 type
   GlobalSettings* = object
 
@@ -8,11 +12,11 @@ type
   VoidCallback* = proc (`converter`: ptr Converter) {.cdecl.}
 
 when defined(windows):
-  {.push dynlib: "wkhtmltox.dll".}
+  {.push dynlib: assets / "wkhtmltox.dll".}
 elif defined(macosx):
-  {.push dynlib: "libwkhtmltox.dynlib".}
+  {.push dynlib: assets / "libwkhtmltox.0.12.6.dynlib".}
 else:
-  {.push dynlib: "libwkhtmltox.so".}
+  {.push dynlib: assets / "libwkhtmltox.so.0.12.6".}
   
 {.push discardable.}
 proc initImage*(useGraphics: cint): cint {.cdecl, importc: "wkhtmltoimage_init".}
@@ -61,7 +65,7 @@ proc httpErrorCode*(`converter`: ptr Converter): cint {.cdecl,
 proc getOutput*(`converter`: ptr Converter; a2: ptr ptr uint8): clong {.cdecl,
     importc: "wkhtmltoimage_get_output".}
 {.pop.}
-{.pop.}
+#{.pop.}
 
 # convenience procs -----
 

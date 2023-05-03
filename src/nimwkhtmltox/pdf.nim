@@ -1,7 +1,9 @@
-type
-  GlobalSettings* = object
+import std/os
+
+const assets = currentSourcePath().parentDir().parentDir().parentDir() / "assets"
 
 type
+  GlobalSettings* = object
   ObjectSettings* = object
 
 type
@@ -11,11 +13,11 @@ type
   VoidCallback* = proc (`converter`: ptr Converter) {.cdecl.}
 
 when defined(windows):
-  {.push dynlib: "wkhtmltox.dll".}
+  {.push dynlib: assets / "wkhtmltox.dll".}
 elif defined(macosx):
-  {.push dynlib: "libwkhtmltox.dynlib".}
+  {.push dynlib: assets / "libwkhtmltox.0.12.6.dynlib".}
 else:
-  {.push dynlib: "libwkhtmltox.so".}
+  {.push dynlib: assets / "libwkhtmltox.so.0.12.6".}
 
 {.push discardable.}
 proc initPdf*(useGraphics: cint): cint {.cdecl, importc: "wkhtmltopdf_init".}
