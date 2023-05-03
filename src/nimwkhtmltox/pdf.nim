@@ -108,7 +108,7 @@ proc createGlobalSettings*(nvs: openArray[tuple[name: string, value: int | strin
   result = createGlobalSettings()
   result.setGlobalSettings(nvs)
 
-proc createObjectSettings*(nvs: openArray[tuple[name: string, value: int | string | bool | float]]): ptr GlobalSettings = 
+proc createObjectSettings*(nvs: openArray[tuple[name: string, value: int | string | bool | float]]): ptr ObjectSettings = 
   result = createObjectSettings()
   result.setObjectSettings(nvs)
   
