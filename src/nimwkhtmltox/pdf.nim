@@ -1,6 +1,6 @@
 import std/os
 
-const assets = currentSourcePath().parentDir().parentDir().parentDir() / "assets"
+const assets = currentSourcePath().parentDir().parentDir() / "assets"
 
 type
   GlobalSettings* = object
