@@ -1,6 +1,6 @@
 # Package
 
-version       = "0.1.0"
+version       = "0.1.1"
 author        = "Jasmine"
 description   = "Bindings for wkhtmltox"
 license       = "LGPL-3.0-or-later"
