@@ -2,11 +2,15 @@
 
 Nim bindings to wkhtmltox.
 
+## Distributing
+
+This library depends on the wkhtmltox DLL, so please package it when distributing
+your application.
+
 ## Get Started
 
-Firstly, download wkhtmltopdf, as the library depends on the wkhtmltox DLL. You can
-get started with the examples listed here or in the [`examples/`](examples) 
-directory.
+You can get started with the examples listed here or in the 
+[`examples/`](examples) directory.
 
 ## Documentation
 
