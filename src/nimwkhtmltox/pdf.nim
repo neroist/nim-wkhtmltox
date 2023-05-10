@@ -13,11 +13,11 @@ type
   VoidCallback* = proc (`converter`: ptr Converter) {.cdecl.}
 
 when defined(windows):
-  {.push dynlib: wkPdfLib / "wkhtmltox.dll".}
+  {.push dynlib: $wkPdfLib / "wkhtmltox.dll".}
 elif defined(macosx):
-  {.push dynlib: wkPdfLib / "libwkhtmltox.0.12.6.dynlib".}
+  {.push dynlib: $wkPdfLib / "libwkhtmltox.0.12.6.dynlib".}
 else:
-  {.push dynlib: wkPdfLib / "libwkhtmltox.so.0.12.6".}
+  {.push dynlib: $wkPdfLib / "libwkhtmltox.so.0.12.6".}
 
 {.push discardable.}
 proc initPdf*(useGraphics: cint): cint {.cdecl, importc: "wkhtmltopdf_init".}
