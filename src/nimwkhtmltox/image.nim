@@ -1,6 +1,6 @@
 import std/os
 
-const assets = currentSourcePath().parentDir() / "assets"
+const wkImageLib {.strdefine.} = currentSourcePath().parentDir() / "assets"
 
 type
   GlobalSettings* = object
@@ -12,11 +12,11 @@ type
   VoidCallback* = proc (`converter`: ptr Converter) {.cdecl.}
 
 when defined(windows):
-  {.push dynlib: assets / "wkhtmltox.dll".}
+  {.push dynlib: wkImageLib / "wkhtmltox.dll".}
 elif defined(macosx):
-  {.push dynlib: assets / "libwkhtmltox.0.12.6.dynlib".}
+  {.push dynlib: wkImageLib / "libwkhtmltox.0.12.6.dynlib".}
 else:
-  {.push dynlib: assets / "libwkhtmltox.so.0.12.6".}
+  {.push dynlib: wkImageLib / "libwkhtmltox.so.0.12.6".}
   
 {.push discardable.}
 proc initImage*(useGraphics: cint): cint {.cdecl, importc: "wkhtmltoimage_init".}
