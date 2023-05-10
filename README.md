@@ -7,6 +7,9 @@ Nim bindings to wkhtmltox.
 This library depends on the wkhtmltox DLL, so please package it when distributing
 your application.
 
+You can use `-d:wkImageLib` and `-d:wkPdfLib` to control what directory the DLLs are
+looked for, for the `image` and `pdf` submodule respectively.
+
 ## Get Started
 
 You can get started with the examples listed here or in the 
