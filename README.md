@@ -8,7 +8,7 @@ This library depends on the wkhtmltox DLL, so please package it when distributin
 your application.
 
 You can use `-d:wkImageLib` and `-d:wkPdfLib` to control what directory the DLLs are
-looked for, for the `image` and `pdf` submodule respectively.
+looked for, for the `image` and `pdf` submodules respectively.
 
 ## Get Started
 
